@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MedellinPlaces</string>
+    <string name="descriptionTitle">Descripción:</string>
+    <string name="placeName1">Jardín Botánico</string>
+    <string name="placeDescription1">El Jardín Botánico "Joaquín Antonio Uribe" de Medellín es un
+        museo vivo y centro de ciencia ubicado en la zona central de la ciudad. Es una área
+        silvestre protegida y de acceso público con una amplia diversidad de plantas y animales,
+        que cuenta incluso con un lago.
+    </string>
+</resources>
