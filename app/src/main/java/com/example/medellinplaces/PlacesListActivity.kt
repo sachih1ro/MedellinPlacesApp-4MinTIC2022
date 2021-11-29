@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.medellinplaces.utils.Utils
 import org.json.JSONException
 import org.json.JSONObject
+import android.content.Intent
+
 
 class PlacesListActivity : AppCompatActivity() {
 
@@ -43,6 +45,14 @@ class PlacesListActivity : AppCompatActivity() {
 
 
     }
+
+    /*
+    private fun switchFromActivityListToItem() {
+        val switchActivityIntent = Intent(this, PlaceItemActivity::class.java)
+        startActivity(switchActivityIntent)
+    }
+
+     */
 
 
 }
