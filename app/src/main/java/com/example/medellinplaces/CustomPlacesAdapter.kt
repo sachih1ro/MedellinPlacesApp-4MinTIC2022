@@ -1,6 +1,7 @@
 package com.example.medellinplaces
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,12 +39,21 @@ class CustomPlacesAdapter(
         holder.placeImageImageView.setImageResource(idImageView)
         holder.placeScoreTextView.text = placeScore[position]
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, placeName[position], Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, placeName[position], Toast.LENGTH_SHORT).show()
+            //val switchActivityIntent = Intent(this, PlaceItemActivity::class.java)
+            val switchActivityListToItem = Intent(context,PlaceItemActivity::class.java)
+                .putExtra("placeName", placeName[position])
+                .putExtra("placeDescription", placeDescription[position])
+                .putExtra("placeImageName", placeImageName[position])
+                .putExtra("placeScore", placeScore[position])
+            context.startActivity(switchActivityListToItem)
         }
     }
 
     override fun getItemCount(): Int {
         return placeName.size
     }
+
+
 
 }

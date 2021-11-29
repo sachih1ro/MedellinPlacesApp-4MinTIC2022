@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_ConstraintLayout"
+    android:id="@+id/place_constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlaceItemActivity">
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/cityName_textView"
+            android:id="@+id/textView_placeName_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
@@ -44,7 +44,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/placeImage_imageView"
+        android:id="@+id/imageView_placeImage_item"
         android:layout_width="360dp"
         android:layout_height="250dp"
         android:layout_marginStart="10dp"
@@ -68,10 +68,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeImage_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_placeImage_item" />
 
     <TextView
-        android:id="@+id/placeDescription_textView"
+        android:id="@+id/textView_placeDescription_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -94,10 +94,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeDescription_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_placeDescription_item" />
 
     <TextView
-        android:id="@+id/textView_scoreValue"
+        android:id="@+id/textView_scoreValue_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:justificationMode="inter_word"
