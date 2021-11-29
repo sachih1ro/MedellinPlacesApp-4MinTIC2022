@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_round"
+    android:layout_margin="2dp">
+
+    <ImageView
+        android:id="@+id/imageView_place"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/place_icon_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_placeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/place_name_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_place"
+        app:layout_constraintTop_toTopOf="@+id/imageView_place" />
+
+    <TextView
+        android:id="@+id/textView_placeDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:lines="2"
+        android:text="@string/place_description_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_placeName"
+        app:layout_constraintTop_toBottomOf="@+id/textView_placeName" />
+
+    <TextView
+        android:id="@+id/textView_scoreTitleRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/score_title"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_placeDescription"
+        app:layout_constraintTop_toBottomOf="@+id/textView_placeDescription" />
+
+    <TextView
+        android:id="@+id/textView_scoreValueRV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:text="@string/score_default"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_scoreTitleRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_scoreTitleRV"
+        app:layout_constraintTop_toTopOf="@+id/textView_scoreTitleRV" />
+
+    <!--android:justificationMode="inter_word"-->
+</androidx.constraintlayout.widget.ConstraintLayout>
