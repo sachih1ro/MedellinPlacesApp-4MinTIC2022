@@ -1,0 +1,41 @@
+{
+  "places":[
+    {
+      "name":"Jardín Botánico",
+      "description":"El Jardín Botánico \"Joaquín Antonio Uribe\" de Medellín es un museo vivo y centro de ciencia ubicado en la zona central de la ciudad. Es una área silvestre, protegida y de acceso público con una amplia diversidad de plantas y animales, que cuenta incluso con un lago.",
+      "image": "jardin_botanico",
+      "score": "4.5 / 5.0"
+    },{
+      "name":"Parque Explora",
+      "description":"Es un museo interactivo de ciencias conformado por multiples salas que incluyen un acuario con énfasis en la Amazonia, un planetario y un teatro.",
+      "image": "parque_explora",
+      "score": "5.0 / 5.0"
+    },{
+      "name":"Parque de los Deseos",
+      "description":"Ubicado cerca a la UdeA, es un parque urbano dentro del cual se encuentran el Planetario de Medellín \"Jesús Emilio Ramírez\" y la Casa de la Música.",
+      "image": "parque_deseos",
+      "score": "4.0 / 5.0"
+    },{
+      "name":"Parque Norte",
+      "description":"Es un parque de diversiones ubicando en el centro de la ciudad.",
+      "image": "parque_norte",
+      "score": "3.9 / 5.0"
+    },{
+      "name":"Museo Cementerio San Pedro",
+      "description":"Es un museo vivo al aire libre, un espacio ritual y artístico, lugar para los vivos y los muertos. Escenario para la expresión de los afectos, el dolor y la memoria donde los visitantes pueden evocar el pasado remoto o inmediato de Medellín.",
+      "image": "museo_san_pedro",
+      "score": "4.2 / 5.0"
+    },{
+      "name":"Parque Natural Cerro el Volador",
+      "description":"Es el parque natural más grande dentro del área urbana de Medellín y posee una gran riqueza de fauna y flora.",
+      "image": "cerro_volador",
+      "score": "4.4 / 5.0"
+    },{
+      "name":"Unidad Deportiva Atanasio Girardot",
+      "description":"Es un complejo deportivo, el cual alberga al estadio de fútbol profesional que es sede de los equipos Independiente Medellín y Atlético Nacional.",
+      "image": "atanasio_girardot",
+      "score": "4.1 / 5.0"
+    }
+  ]
+
+}

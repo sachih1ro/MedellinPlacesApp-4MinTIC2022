@@ -37,7 +37,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\cmilo\Desktop\MinTIC Ciclo 4\Programacion\Recursos\icons8-menú-384.png" />
+                                                <entry key="imagePath" value="C:\Users\cmilo\Desktop\MinTIC Ciclo 4\Programacion\Recursos\jardin_botanico.jpg" />
                                                 <entry key="opacityPercent" value="60" />
                                               </map>
                                             </option>
@@ -73,8 +73,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\cmilo\Desktop\MinTIC Ciclo 4\Programacion\Recursos\icons8-menú-384.png" />
-                                      <entry key="outputName" value="menu_button" />
+                                      <entry key="imageAsset" value="C:\Users\cmilo\Desktop\MinTIC Ciclo 4\Programacion\Recursos\jardin_botanico.jpg" />
+                                      <entry key="outputName" value="jardin_botanico_sc" />
                                     </map>
                                   </option>
                                 </PersistentState>
