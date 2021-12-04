@@ -9,20 +9,15 @@
     <string name="name_medellin">Medellín</string>
     <string name="score_title">Calificación promedio:</string>
     <string name="score_default">4.5 / 5.0</string>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="settings_header">Configuraciones</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- Notifications Preferences -->
+    <string name="notifications_title">Notificaciones</string>
+    <string name="notifications_sound_title">Sonido de notificaciones</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--
     <string-array name="flowers_array">

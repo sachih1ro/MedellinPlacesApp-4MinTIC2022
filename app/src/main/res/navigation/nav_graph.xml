@@ -3,16 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/placesListActivity">
-
-    <activity
-        android:id="@+id/placesListActivity"
-        android:name="com.example.medellinplaces.PlacesListActivity"
-        android:label="activity_places_list"
-        tools:layout="@layout/activity_places_list" />
-    <activity
-        android:id="@+id/placeItemActivity"
-        android:name="com.example.medellinplaces.PlaceItemActivity"
-        android:label="activity_place_item"
-        tools:layout="@layout/activity_place_item" />
+    app:startDestination="@id/placesListFragment">
+    <fragment
+        android:id="@+id/placesListFragment"
+        android:name="com.example.medellinplaces.PlacesListFragment"
+        android:label="fragment_places_list"
+        tools:layout="@layout/fragment_places_list" >
+        <action
+            android:id="@+id/action_placesListFragment_to_placeItemFragment"
+            app:destination="@id/placeItemFragment" />
+        <action
+            android:id="@+id/action_placesListFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeItemFragment"
+        android:name="com.example.medellinplaces.PlaceItemFragment"
+        android:label="fragment_place_item"
+        tools:layout="@layout/fragment_place_item" >
+        <action
+            android:id="@+id/action_placeItemFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.medellinplaces.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

@@ -7,15 +7,18 @@
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13229166666666667" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/activity_place_item.xml" value="0.264" />
-        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/activity_places_list.xml" value="0.2105978260869565" />
+        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/activity_places_list.xml" value="0.1" />
+        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/activity_places_main.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/border_example.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/border_round.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/flower_item.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/fragment_place_item.xml" value="0.4" />
+        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/fragment_places_list.xml" value="0.2" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/places_item.xml" value="0.4" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/places_list.xml" value="0.21603260869565216" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/places_list_item.xml" value="0.264" />
         <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/layout/round_border.xml" value="0.19384057971014493" />
-        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/xml/root_preferences.xml" value="0.4" />
+        <entry key="..\:/Users/cmilo/AndroidStudioProjects/MedellinPlaces/app/src/main/res/xml/root_preferences.xml" value="0.536" />
       </map>
     </option>
   </component>

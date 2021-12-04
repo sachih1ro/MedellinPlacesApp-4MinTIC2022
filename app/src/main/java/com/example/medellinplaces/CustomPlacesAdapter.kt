@@ -2,12 +2,15 @@ package com.example.medellinplaces
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
 class CustomPlacesAdapter(
@@ -16,6 +19,7 @@ class CustomPlacesAdapter(
     private val placeDescription: ArrayList<String>,
     private val placeImageName: ArrayList<String>,
     private val placeScore: ArrayList<String>,
+    private var navController: NavController? = null
     ):RecyclerView.Adapter<CustomPlacesAdapter.MyViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
@@ -38,6 +42,12 @@ class CustomPlacesAdapter(
             .getIdentifier(placeImageName[position],"drawable", context.packageName)
         holder.placeImageImageView.setImageResource(idImageView)
         holder.placeScoreTextView.text = placeScore[position]
+
+        holder.itemView.setOnClickListener {
+            navController = Navigation.findNavController(holder.itemView)
+            navController!!.navigate(R.id.action_placesListFragment_to_placeItemFragment)
+        }
+        /*
         holder.itemView.setOnClickListener {
             //Toast.makeText(context, placeName[position], Toast.LENGTH_SHORT).show()
             //val switchActivityIntent = Intent(this, PlaceItemActivity::class.java)
@@ -46,8 +56,13 @@ class CustomPlacesAdapter(
                 .putExtra("placeDescription", placeDescription[position])
                 .putExtra("placeImageName", placeImageName[position])
                 .putExtra("placeScore", placeScore[position])
+            Log.d("Testito","Intentaremos pasar del fragment a la activity Item")
             context.startActivity(switchActivityListToItem)
         }
+
+         */
+
+
     }
 
     override fun getItemCount(): Int {
