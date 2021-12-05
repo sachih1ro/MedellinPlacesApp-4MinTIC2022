@@ -1,14 +1,11 @@
 package com.example.medellinplaces
 
 import android.content.Context
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -24,15 +21,19 @@ class CustomPlacesAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             CustomPlacesAdapter.MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.places_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.places_item, parent,
+            false)
         return MyViewHolder(view)
     }
 
     inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var placeNameTextView = itemView.findViewById<TextView>(R.id.textView_placeName) as TextView
-        var placeDescriptionTextView = itemView.findViewById<TextView>(R.id.textView_placeDescription) as TextView
-        var placeImageImageView = itemView.findViewById<ImageView>(R.id.imageView_place) as ImageView
-        var placeScoreTextView = itemView.findViewById<TextView>(R.id.textView_scoreValueRV) as TextView
+        var placeDescriptionTextView =
+            itemView.findViewById<TextView>(R.id.textView_placeDescription) as TextView
+        var placeImageImageView =
+            itemView.findViewById<ImageView>(R.id.imageView_place) as ImageView
+        var placeScoreTextView =
+            itemView.findViewById<TextView>(R.id.textView_scoreValueRV) as TextView
     }
 
     override fun onBindViewHolder(holder: CustomPlacesAdapter.MyViewHolder, position: Int) {
@@ -47,7 +48,11 @@ class CustomPlacesAdapter(
             navController = Navigation.findNavController(holder.itemView)
             navController!!.navigate(R.id.action_placesListFragment_to_placeItemFragment)
         }
-        /*
+
+        //Falta enviar data al navegar al itemFragment
+
+    /*
+        //Asi se enviaba data cuando se trabajaba con Activities
         holder.itemView.setOnClickListener {
             //Toast.makeText(context, placeName[position], Toast.LENGTH_SHORT).show()
             //val switchActivityIntent = Intent(this, PlaceItemActivity::class.java)
@@ -59,16 +64,12 @@ class CustomPlacesAdapter(
             Log.d("Testito","Intentaremos pasar del fragment a la activity Item")
             context.startActivity(switchActivityListToItem)
         }
-
-         */
-
+    */
 
     }
 
     override fun getItemCount(): Int {
         return placeName.size
     }
-
-
 
 }

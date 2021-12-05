@@ -106,5 +106,4 @@
         app:layout_constraintStart_toEndOf="@+id/textView_scoreTitle"
         app:layout_constraintTop_toTopOf="@+id/textView_scoreTitle" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
