@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,13 +13,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.medellinplaces.utils.Utils
 import org.json.JSONException
 import org.json.JSONObject
+import com.example.medellinplaces.databinding.FragmentPlacesListBinding
+import com.example.medellinplaces.model.PlaceModel
+import com.example.medellinplaces.model.PlaceProvider
+import com.example.medellinplaces.viewModel.PlaceViewModel
 
 class PlacesListFragment : Fragment() {
 
-    var placeNames: ArrayList<String> = ArrayList()
-    var placeDescriptions: ArrayList<String> = ArrayList()
-    var placeImageNames: ArrayList<String> = ArrayList()
-    var placeScores: ArrayList<String> = ArrayList()
+    private var _binding: FragmentPlacesListBinding? = null
+    private val binding get() = _binding!!
+    private val placeViewModel : PlaceViewModel by viewModels()
+
+    var listPlaces: ArrayList<PlaceModel> = ArrayList()
     var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,21 +35,23 @@ class PlacesListFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_places_list, container, false)
+        _binding = FragmentPlacesListBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerViewPlaces: RecyclerView = view.findViewById(R.id.places_recyclerView)
+        val recyclerViewPlaces: RecyclerView = binding.placesRecyclerView
         val linearLayoutManager = LinearLayoutManager(requireContext().applicationContext)
 
         navController = Navigation.findNavController(view)
-        view.findViewById<ImageButton>(R.id.buttonMenu_imageButton_list).setOnClickListener {
+        binding.buttonMenuImageButtonList.setOnClickListener {
             navController!!.navigate(R.id.action_placesListFragment_to_settingsFragment)
         }
 
@@ -56,19 +63,28 @@ class PlacesListFragment : Fragment() {
             val placesArray = obj.getJSONArray("places")
             for (i in 0 until placesArray.length()) {
                 val placeInfo = placesArray.getJSONObject(i)
-                placeNames.add(placeInfo.getString("name"))
-                placeDescriptions.add(placeInfo.getString("description"))
-                placeImageNames.add(placeInfo.getString("image"))
-                placeScores.add(placeInfo.getString("score"))
+                listPlaces.add(PlaceModel(placeInfo.getString("name"),
+                    placeInfo.getString("description"),
+                    placeInfo.getString("image"),
+                    placeInfo.getString("score")))
             }
         } catch (e: JSONException) {
             e.printStackTrace()
         }
 
+        //val customAdapter = CustomPlacesAdapter(requireContext(),
+        //    listPlaces)
+
         val customAdapter = CustomPlacesAdapter(requireContext(),
-            placeNames, placeDescriptions, placeImageNames, placeScores)
+           PlaceProvider.places, navController)
+
         recyclerViewPlaces.adapter = customAdapter
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }
