@@ -41,29 +41,29 @@ class PlaceItemFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         /*
-        placeViewModel.placeModel.observe(this, Observer{ currentPlace ->
-
-            Log.d("cambioID","Entro al observer y ahora el place name es "+currentPlace.placeName)
-            binding.textViewPlaceNameItem.text = currentPlace.placeName
-            binding.textViewPlaceDescriptionItem.text = currentPlace.placeDescription
-            binding.textViewScoreValueItem.text = currentPlace.placeScore
-            val idImageView = resources
-                    .getIdentifier(currentPlace.placeName,"drawable", context!!.packageName)
-            binding.imageViewPlaceImageItem.setImageResource(idImageView)
-
-        })
-            //Segunda opcion fallida
-            placeViewModel.placeModelActual.observe(this, Observer {
+        placeViewModel.placeModelInItemFrag.observe(this, Observer {
             binding.textViewPlaceNameItem.text = it.placeName
+            Log.d("cambioID","el nombre actual es "+it.placeName)
+            binding.textViewPlaceDescriptionItem.text = it.placeDescription
+            binding.textViewScoreValueItem.text = it.placeScore
+
+            val idImageView = resources
+                .getIdentifier(it.imageName,"drawable", context!!.packageName)
+            binding.imageViewPlaceImageItem.setImageResource(idImageView)
         })
+
          */
 
-        binding.textViewPlaceNameItem.text = PlaceViewModel().getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeName
-        binding.textViewPlaceDescriptionItem.text = PlaceViewModel().getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeDescription
-        binding.textViewScoreValueItem.text = PlaceViewModel().getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeScore
+        binding.textViewPlaceNameItem.text = PlaceViewModel().
+        getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeName
+        binding.textViewPlaceDescriptionItem.text = PlaceViewModel().
+        getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeDescription
+        binding.textViewScoreValueItem.text = PlaceViewModel().
+        getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeScore
 
         val idImageView = resources
-            .getIdentifier(PlaceViewModel().getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).imageName,"drawable", context!!.packageName)
+            .getIdentifier(PlaceViewModel().getPlaceAtPosition(PlaceViewModel().
+            obtenerPlaceid()).imageName,"drawable", context!!.packageName)
         binding.imageViewPlaceImageItem.setImageResource(idImageView)
 
 

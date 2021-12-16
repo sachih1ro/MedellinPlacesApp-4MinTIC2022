@@ -11,7 +11,6 @@ import com.example.medellinplaces.databinding.PlacesItemBinding
 import com.example.medellinplaces.model.PlaceModel
 import com.example.medellinplaces.viewModel.PlaceViewModel
 
-
 class CustomPlacesAdapter(private var context: Context, private var placesList: List<PlaceModel>,
                           private var navController: NavController? = null
     ):RecyclerView.Adapter<CustomPlacesAdapter.MyViewHolder>(){
@@ -38,6 +37,7 @@ class CustomPlacesAdapter(private var context: Context, private var placesList: 
                 holder.binding.imageViewPlace.setImageResource(idImageView)
 
                 holder.binding.constraintlyItemCard.setOnClickListener{
+                    //placeViewModel.changePlaceModelInItemFrag(bindingAdapterPosition)
                     PlaceViewModel().changePlaceid(bindingAdapterPosition)
                     //PlaceViewModel().setPlaceAtPosition(bindingAdapterPosition)
                     //Log.d("cambioID","Cambio es"+PlaceViewModel().obtenerPlaceid().toString())
