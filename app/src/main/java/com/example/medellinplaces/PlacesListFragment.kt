@@ -6,16 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.medellinplaces.utils.Utils
-import org.json.JSONException
-import org.json.JSONObject
 import com.example.medellinplaces.databinding.FragmentPlacesListBinding
-import com.example.medellinplaces.model.PlaceModel
-import com.example.medellinplaces.model.PlaceProvider
 import com.example.medellinplaces.viewModel.PlaceViewModel
 
 class PlacesListFragment : Fragment() {
@@ -24,11 +20,11 @@ class PlacesListFragment : Fragment() {
     private val binding get() = _binding!!
     private val placeViewModel : PlaceViewModel by viewModels()
 
-    var listPlaces: ArrayList<PlaceModel> = ArrayList()
     var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        placeViewModel.onCreate()
         arguments?.let {
 
         }
@@ -57,28 +53,13 @@ class PlacesListFragment : Fragment() {
 
         recyclerViewPlaces.layoutManager = linearLayoutManager
 
-        try {
-            val obj = JSONObject(Utils(requireContext()).loadJsonFromAssets(requireContext()
-                .applicationContext, "places.json"))
-            val placesArray = obj.getJSONArray("places")
-            for (i in 0 until placesArray.length()) {
-                val placeInfo = placesArray.getJSONObject(i)
-                listPlaces.add(PlaceModel(placeInfo.getString("name"),
-                    placeInfo.getString("description"),
-                    placeInfo.getString("image"),
-                    placeInfo.getString("score")))
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
+        var customAdapter: CustomPlacesAdapter
 
-        //val customAdapter = CustomPlacesAdapter(requireContext(),
-        //    listPlaces)
-
-        val customAdapter = CustomPlacesAdapter(requireContext(),
-           PlaceProvider.places, navController)
-
-        recyclerViewPlaces.adapter = customAdapter
+        placeViewModel.placeModelList.observe(this, Observer {
+            customAdapter = CustomPlacesAdapter(requireContext(),
+                it, navController)
+            recyclerViewPlaces.adapter = customAdapter
+        })
 
     }
 

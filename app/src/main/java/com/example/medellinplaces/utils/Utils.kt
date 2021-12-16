@@ -4,7 +4,6 @@ import android.content.Context
 import java.io.IOException
 import java.nio.charset.Charset
 
-
 class Utils (val context: Context){
 
     fun loadJsonFromAssets(context: Context, fileName: String): String {
