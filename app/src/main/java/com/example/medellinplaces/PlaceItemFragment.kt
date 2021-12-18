@@ -12,6 +12,8 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.medellinplaces.databinding.FragmentPlaceItemBinding
 import com.example.medellinplaces.viewModel.PlaceViewModel
+import android.content.Intent
+import android.net.Uri
 
 class PlaceItemFragment : Fragment() {
 
@@ -54,18 +56,30 @@ class PlaceItemFragment : Fragment() {
 
          */
 
-        binding.textViewPlaceNameItem.text = PlaceViewModel().
-        getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeName
-        binding.textViewPlaceDescriptionItem.text = PlaceViewModel().
-        getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeDescription
-        binding.textViewScoreValueItem.text = PlaceViewModel().
-        getPlaceAtPosition(PlaceViewModel().obtenerPlaceid()).placeScore
+        binding.textViewPlaceNameItem.text = placeViewModel.
+        getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeName
+        binding.textViewPlaceDescriptionItem.text = placeViewModel.
+        getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeDescription
+        binding.textViewScoreValueItem.text = placeViewModel.
+        getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeScore
 
         val idImageView = resources
-            .getIdentifier(PlaceViewModel().getPlaceAtPosition(PlaceViewModel().
+            .getIdentifier(placeViewModel.getPlaceAtPosition(placeViewModel.
             obtenerPlaceid()).imageName,"drawable", context!!.packageName)
         binding.imageViewPlaceImageItem.setImageResource(idImageView)
 
+        binding.buttonShowInGoogleMaps.setOnClickListener {
+            val gmmIntentUri = Uri.parse("geo:"+
+                    placeViewModel.getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeLatitude
+                    +","+
+                    placeViewModel.getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeLongitude
+                    +"?q="+placeViewModel.getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeName)
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            mapIntent.resolveActivity(activity!!.packageManager)?.let {
+                startActivity(mapIntent)
+            }
+        }
 
         navController = Navigation.findNavController(view)
         binding.buttonMenuImageButtonItem.setOnClickListener {
