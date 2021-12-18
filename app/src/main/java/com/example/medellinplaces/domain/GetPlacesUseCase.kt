@@ -1,7 +1,7 @@
 package com.example.medellinplaces.domain
 
-import com.example.medellinplaces.model.PlaceModel
-import com.example.medellinplaces.model.PlaceRepository
+import com.example.medellinplaces.data.model.PlaceModel
+import com.example.medellinplaces.data.PlaceRepository
 
 class GetPlacesUseCase {
     private val repository = PlaceRepository()

@@ -6,7 +6,7 @@
     app:startDestination="@id/placesListFragment">
     <fragment
         android:id="@+id/placesListFragment"
-        android:name="com.example.medellinplaces.PlacesListFragment"
+        android:name="com.example.medellinplaces.ui.view.PlacesListFragment"
         android:label="fragment_places_list"
         tools:layout="@layout/fragment_places_list" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/placeItemFragment"
-        android:name="com.example.medellinplaces.PlaceItemFragment"
+        android:name="com.example.medellinplaces.ui.view.PlaceItemFragment"
         android:label="fragment_place_item"
         tools:layout="@layout/fragment_place_item" >
         <action
@@ -27,6 +27,6 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.medellinplaces.SettingsFragment"
+        android:name="com.example.medellinplaces.ui.view.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

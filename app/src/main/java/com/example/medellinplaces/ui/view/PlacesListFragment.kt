@@ -1,4 +1,4 @@
-package com.example.medellinplaces
+package com.example.medellinplaces.ui.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,8 +11,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.medellinplaces.R
 import com.example.medellinplaces.databinding.FragmentPlacesListBinding
-import com.example.medellinplaces.viewModel.PlaceViewModel
+import com.example.medellinplaces.ui.CustomPlacesAdapter
+import com.example.medellinplaces.ui.viewModel.PlaceViewModel
 
 class PlacesListFragment : Fragment() {
 
@@ -46,15 +48,18 @@ class PlacesListFragment : Fragment() {
         val recyclerViewPlaces: RecyclerView = binding.placesRecyclerView
         val linearLayoutManager = LinearLayoutManager(requireContext().applicationContext)
 
+        //Navigation
         navController = Navigation.findNavController(view)
         binding.buttonMenuImageButtonList.setOnClickListener {
             navController!!.navigate(R.id.action_placesListFragment_to_settingsFragment)
         }
 
+        //RecyclerView feeding
         recyclerViewPlaces.layoutManager = linearLayoutManager
 
         var customAdapter: CustomPlacesAdapter
 
+        //Observing list of POI's in json online
         placeViewModel.placeModelList.observe(this, Observer {
             customAdapter = CustomPlacesAdapter(requireContext(),
                 it, navController)

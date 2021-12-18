@@ -1,4 +1,4 @@
-package com.example.medellinplaces
+package com.example.medellinplaces.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +13,5 @@ class PlacesMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
-
 
 }

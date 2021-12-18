@@ -1,7 +1,7 @@
-package com.example.medellinplaces.network
+package com.example.medellinplaces.data.network
 
-import com.example.medellinplaces.model.PlaceModel
-import com.example.medellinplaces.utils.RetrofitHelper
+import com.example.medellinplaces.data.model.PlaceModel
+import com.example.medellinplaces.core.RetrofitHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,4 +1,4 @@
-package com.example.medellinplaces.utils
+package com.example.medellinplaces.core
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
