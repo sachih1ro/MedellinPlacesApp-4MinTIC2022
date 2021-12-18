@@ -14,6 +14,7 @@ import com.example.medellinplaces.databinding.FragmentPlaceItemBinding
 import com.example.medellinplaces.viewModel.PlaceViewModel
 import android.content.Intent
 import android.net.Uri
+import androidx.fragment.app.FragmentTransaction
 
 class PlaceItemFragment : Fragment() {
 
@@ -42,6 +43,12 @@ class PlaceItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Creación de fragment interno para mapa
+        val childFragment: Fragment = MapsFragment()
+        val transaction: FragmentTransaction = childFragmentManager.beginTransaction()
+        transaction.replace(binding.fragmentContainer4map.id, childFragment).commit()
+
+
         /*
         placeViewModel.placeModelInItemFrag.observe(this, Observer {
             binding.textViewPlaceNameItem.text = it.placeName
@@ -55,6 +62,9 @@ class PlaceItemFragment : Fragment() {
         })
 
          */
+
+
+        //
 
         binding.textViewPlaceNameItem.text = placeViewModel.
         getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeName
