@@ -1,4 +1,4 @@
-package com.example.medellinplaces.model
+package com.example.medellinplaces.data.model
 
 class PlaceProvider {
     companion object {

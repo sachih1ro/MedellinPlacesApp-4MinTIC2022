@@ -1,7 +1,8 @@
-package com.example.medellinplaces
+package com.example.medellinplaces.ui.view
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import com.example.medellinplaces.R
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

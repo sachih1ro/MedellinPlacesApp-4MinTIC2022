@@ -1,4 +1,4 @@
-package com.example.medellinplaces
+package com.example.medellinplaces.ui.view
 
 import androidx.fragment.app.Fragment
 
@@ -7,7 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.medellinplaces.viewModel.PlaceViewModel
+import com.example.medellinplaces.R
+import com.example.medellinplaces.ui.viewModel.PlaceViewModel
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback

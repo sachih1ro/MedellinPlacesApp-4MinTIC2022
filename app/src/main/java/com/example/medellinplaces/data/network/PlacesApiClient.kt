@@ -1,6 +1,6 @@
-package com.example.medellinplaces.network
+package com.example.medellinplaces.data.network
 
-import com.example.medellinplaces.model.PlaceModel
+import com.example.medellinplaces.data.model.PlaceModel
 import retrofit2.Response
 import retrofit2.http.GET
 

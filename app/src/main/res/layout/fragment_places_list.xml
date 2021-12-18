@@ -5,7 +5,7 @@
     android:id="@+id/constraintLy_fragment_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlacesListFragment">
+    tools:context=".ui.view.PlacesListFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/upperContainer_constraintLayout_list"
