@@ -21,7 +21,6 @@ class PlaceViewModel: ViewModel() {
 
             if (!result.isNullOrEmpty()){
                 placeModelList.postValue(result)
-
             }
         }
     }

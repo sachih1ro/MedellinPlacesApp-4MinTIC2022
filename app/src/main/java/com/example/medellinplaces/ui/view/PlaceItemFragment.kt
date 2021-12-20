@@ -14,6 +14,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.fragment.app.FragmentTransaction
 import com.example.medellinplaces.R
+import com.example.medellinplaces.data.model.PlaceModel
+import com.squareup.picasso.Picasso
 
 class PlaceItemFragment : Fragment() {
 
@@ -48,25 +50,20 @@ class PlaceItemFragment : Fragment() {
         transaction.replace(binding.fragmentContainer4map.id, childFragment).commit()
 
         //Elements load (text and image)
-        binding.textViewPlaceNameItem.text = placeViewModel.
-        getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeName
-        binding.textViewPlaceDescriptionItem.text = placeViewModel.
-        getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeDescription
-        binding.textViewScoreValueItem.text = placeViewModel.
-        getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeScore
-
-        val idImageView = resources
-            .getIdentifier(placeViewModel.getPlaceAtPosition(placeViewModel.
-            obtenerPlaceid()).imageName,"drawable", context!!.packageName)
-        binding.imageViewPlaceImageItem.setImageResource(idImageView)
+        val placeModelSelected : PlaceModel = placeViewModel.
+            getPlaceAtPosition(placeViewModel.obtenerPlaceid())
+        binding.textViewPlaceNameItem.text = placeModelSelected.placeName
+        binding.textViewPlaceDescriptionItem.text = placeModelSelected.placeDescription
+        binding.textViewScoreValueItem.text = placeModelSelected.placeScore
+        Picasso.get().load(placeModelSelected.imageName).into(binding.imageViewPlaceImageItem)
 
         //Intent for open location on Google Maps
         binding.buttonShowInGoogleMaps.setOnClickListener {
             val gmmIntentUri = Uri.parse("geo:"+
-                    placeViewModel.getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeLatitude
+                    placeModelSelected.placeLatitude
                     +","+
-                    placeViewModel.getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeLongitude
-                    +"?q="+placeViewModel.getPlaceAtPosition(placeViewModel.obtenerPlaceid()).placeName)
+                    placeModelSelected.placeLongitude
+                    +"?q="+placeModelSelected.placeName)
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             mapIntent.resolveActivity(activity!!.packageManager)?.let {
