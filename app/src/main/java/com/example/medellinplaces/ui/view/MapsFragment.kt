@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
 
-    val placeViewModel : PlaceViewModel by viewModels()
+    private val placeViewModel : PlaceViewModel by viewModels()
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.

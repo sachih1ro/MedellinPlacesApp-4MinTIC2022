@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Blue-Red Palette -->
+    <color name="br_blue_main">#1368aa</color>
+    <color name="br_blue_dark">#033270</color>
+    <color name="br_blue_light">#4091c9</color>
+    <color name="br_blue_l2">#9dcee2</color>
+    <color name="br_med_l3">#fedfd4</color>
+    <color name="br_red_main">#cb1b16</color>
+    <color name="br_red_dark">#65010c</color>
+    <color name="br_red_light">#ef3c2d</color>
+    <color name="br_red_l2">#f26a4f</color>
+    <color name="br_red_l3">#f29479</color>
+
 </resources>
