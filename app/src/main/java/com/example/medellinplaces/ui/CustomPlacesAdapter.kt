@@ -10,6 +10,7 @@ import com.example.medellinplaces.R
 import com.example.medellinplaces.databinding.PlacesItemBinding
 import com.example.medellinplaces.data.model.PlaceModel
 import com.example.medellinplaces.ui.viewModel.PlaceViewModel
+import com.squareup.picasso.Picasso
 
 class CustomPlacesAdapter(private var context: Context, private var placesList: List<PlaceModel>,
                           private var navController: NavController? = null
@@ -32,10 +33,7 @@ class CustomPlacesAdapter(private var context: Context, private var placesList: 
                 holder.binding.textViewPlaceName.text = this.placeName
                 holder.binding.textViewPlaceDescription.text = this.placeDescription
                 holder.binding.textViewScoreValueRV.text = this.placeScore
-
-                val idImageView = context.resources
-                    .getIdentifier(this.imageName,"drawable", context.packageName)
-                holder.binding.imageViewPlace.setImageResource(idImageView)
+                Picasso.get().load(this.imageName).into(holder.binding.imageViewPlace)
 
                 //Button for open PlacesItemFragment
                 holder.binding.constraintlyItemCard.setOnClickListener{
