@@ -20,4 +20,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_showInGoogleMaps_text">Abrir ubicación en Google Maps</string>
 
+    <!-- Splash Screen -->
+    <string name="powered">powered by Eleven Codes</string>
+    <string name="imageSplashScreen_description">Enterprise logo for splash screen</string>
 </resources>

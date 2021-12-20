@@ -1,7 +1,9 @@
 package com.example.medellinplaces.ui.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import com.example.medellinplaces.databinding.ActivityPlacesMainBinding
 
 class PlacesMainActivity : AppCompatActivity() {
@@ -13,5 +15,6 @@ class PlacesMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
+
 
 }
